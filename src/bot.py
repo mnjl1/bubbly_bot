@@ -14,7 +14,7 @@ dp = Dispatcher(bot)
 @dp.message_handler(commands=['start'])
 async def start(message: types.Message):
     markup = types.ReplyKeyboardMarkup()
-    markup.add(types.KeyboardButton('Резерв BUBBLY', web_app=WebAppInfo(url='https://github.com/mnjl1/bubbly_bot/blob/main/src/bubbly.html')))
+    markup.add(types.KeyboardButton('Резерв BUBBLY', web_app=WebAppInfo(url='https://mnjl1.github.io/bubbly_bot/')))
     await message.answer('Привіт', reply_markup=markup)
 
     
