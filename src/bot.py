@@ -11,10 +11,12 @@ token = os.getenv('BOT_TOKEN')
 bot = Bot(token)
 dp = Dispatcher(bot)
 
+WEBAPP_URL = 'https://mnjl1.github.io/bubbly_bot/'
+
 @dp.message_handler(commands=['start'])
 async def start(message: types.Message):
-    markup = types.ReplyKeyboardMarkup()
-    markup.add(types.KeyboardButton('Резерв BUBBLY', web_app=WebAppInfo(url='https://mnjl1.github.io/bubbly_bot/')))
+    markup = types.InlineKeyboardMarkup()
+    markup.add(types.InlineKeyboardButton('Резерв BUBBLY', web_app=WebAppInfo(url=WEBAPP_URL)))
     await message.answer('Привіт', reply_markup=markup)
 
     
